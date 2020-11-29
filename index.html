@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/easychem.css" />
+   <link rel="stylesheet" type="text/css" href="context.standalone.css">
+  <script src="jq.js"></script>
+  <script src="context.js"></script>
+  <script>
+  $(document).ready(function(){
+	
+	context.init({preventDoubleContext: false});
+	
+	context.attach('.inline-menu', [
+		{header: 'Options'},
+		{text: 'Open', href: '#'},
+		{text: 'Open in new Window', href: '#'},
+		{divider: true},
+		{text: 'Copy', href: '#'},
+		{text: 'Dafuq!?', href: '#'}
+	]);
+	
+	context.attach('#download', [
+		
+		{header: 'Download'},
+		{text: 'The Script', subMenu: [
+			{header: 'Requires jQuery'},
+			{text: 'context.js', href: 'http://lab.jakiestfu.com/contextjs/context.js', target:'_blank', action: function(e){
+				_gaq.push(['_trackEvent', 'ContextJS Download', this.pathname, this.innerHTML]);
+			}}
+		]},
+		{text: 'The Styles', subMenu: [
+		
+			{text: 'context.bootstrap.css', href: 'http://lab.jakiestfu.com/contextjs/context.bootstrap.css', target:'_blank', action: function(e){
+				_gaq.push(['_trackEvent', 'ContextJS Bootstrap CSS Download', this.pathname, this.innerHTML]);
+			}},
+			
+			{text: 'context.standalone.css', href: 'http://lab.jakiestfu.com/contextjs/context.standalone.css', target:'_blank', action: function(e){
+				_gaq.push(['_trackEvent', 'ContextJS Standalone CSS Download', this.pathname, this.innerHTML]);
+			}}
+		]},
+		{divider: true},
+		{header: 'Meta'},
+		{text: 'The Author', subMenu: [
+			{header: '@jakiestfu'},
+			{text: 'Website', href: 'http://jakiestfu.com/', target: '_blank'},
+			{text: 'Forrst', href: 'http://forrst.com/people/jakiestfu', target: '_blank'},
+			{text: 'Twitter', href: 'http://twitter.com/jakiestfu', target: '_blank'},
+			{text: 'Donate?', action: function(e){
+				e.preventDefault();
+				$('#donate').submit();
+			}}
+		]}
+	]);
+	
+	context.settings({compress: true});
+	
+	context.attach('html', [
+		{header: 'Интерактивная таблица'},
+		{text: 'Использовать СОКРАЩЕННУЮ версию', href: 'index.lite.html'}
+	]);
+	
+	
+	$(document).on('mouseover', '.me-codesta', function(){
+		$('.finale h1:first').css({opacity:0});
+		$('.finale h1:last').css({opacity:1});
+	});
+	
+	$(document).on('mouseout', '.me-codesta', function(){
+		$('.finale h1:last').css({opacity:0});
+		$('.finale h1:first').css({opacity:1});
+	});
+	
+});
+function NoElasticScroll(e) {
+  e.preventDefault(); }
+</script>
+  <style>
+  TH.w5 {
+	BACKGROUND-COLOR: #cccccc; BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; COLOR: #cc3300; FONT-SIZE: 80%; FONT-WEIGHT: bold; WIDTH: 5%
+}
+TH.ptableperiodlabel {
+	width: 2%; BACKGROUND-COLOR: #cccccc; BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; COLOR: #cc3300; FONT-SIZE: 80%
+}
+a { 
+    text-decoration: none; color: black; /* Убираем подчеркивание у ссылок */
+   }
+   a:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание 
+                                   при наведении курсора мыши на ссылку */
+   }
+   body{
+   margin: 0;
+   }
+</style>
+</head>
+<body ontouchmove="NoElasticScroll(event);" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" >
+<table class="mentable" width="100%" height="100%" style="position: fixed; top: -5px; left: 0px; ><tbody> <tr align="Center">
+           <th class="ptableperiodlabel">&nbsp;</th>
+           <th class="w5">1a</th>
+           <th class="w5">2a</th>
+           
+           <th class="w5">3b</th>
+           <th class="w5">4b</th>
+           <th class="w5">5b</th>
+           <th class="w5">6b</th>
+           <th class="w5">7b</th>
+           <th class="w5">8b</th>
+           <th class="w5">8b<br>
+            </th>
+           <th class="w5">8b<br>
+            </th>
+           <th class="w5">1b</th>
+           <th class="w5">2b</th>
+           <th class="w5">3a</th>
+           <th class="w5">4a</th>
+           <th class="w5">5a</th>
+           <th class="w5">6a</th>
+           <th class="w5">7a</th>
+           <th class="w5">8a</th>
+          </tr><tr><th class="ptableperiodlabel">1</th><td class="chem-element s_block"><a href="pages/h.html" target="_blank"><div class="number">1</div><div class="id">H</div><div class="name">Водород</div><div class="mass">1.008</div></a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="chem-element s_block"><div class="number">2</div><a href="pages/he.html" target="_blank"><div class="id">He</div><div class="name">Гелий</div><div class="mass">4.003</div></a></td></tr><tr><th class="ptableperiodlabel">2</th><td class="chem-element s_block"><a href="pages/li.html" target="_blank"><div class="number">3</div><div class="id">Li</div><div class="name">Литий</div><div class="mass">6.941</div></a></td><td class="chem-element s_block"><a href="pages/be.html" target="_blank"><div class="number">4</div><div class="id">Be</div><div class="name">Бериллий</div><div class="mass">9.0122</div></a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="chem-element p_block"><a href="pages/b.html" target="_blank"><div class="number">5</div><div class="id">B</div><div class="name">Бор</div><div class="mass">10.811</div></a></td><td class="chem-element p_block"><a href="pages/c.html" target="_blank"><div class="number">6</div><div class="id">C</div><div class="name">Углерод</div><div class="mass">12.011</div></a></td><td class="chem-element p_block"><a href="pages/n.html" target="_blank"><div class="number">7</div><div class="id">N</div><div class="name">Азот</div><div class="mass">14.007</div></a></td><td class="chem-element p_block"><a href="pages/o.html" target="_blank"><div class="number">8</div><div class="id">O</div><div class="name">Кислород</div><div class="mass">15.999</div></a></td><td class="chem-element p_block"><a href="pages/f.html" target="_blank"><div class="number">9</div><div class="id">F</div><div class="name">Фтор</div><div class="mass">18.998</div></a></td><td class="chem-element p_block"><a href="pages/ne.html" target="_blank"><div class="number">10</div><div class="id">Ne</div><div class="name">Неон</div><div class="mass">20.179</div></a></td></tr><tr><th class="ptableperiodlabel">3</th><td class="chem-element s_block"><a href="pages/na.html" target="_blank"><div class="number">11</div><div class="id">Na</div><div class="name">Натрий</div><div class="mass">22.99</div></a></td><td class="chem-element s_block"><a href="pages/mg.html" target="_blank"><div class="number">12</div><div class="id">Mg</div><div class="name">Магний</div><div class="mass">24.312</div></a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="chem-element p_block"><a href="pages/al.html" target="_blank"><div class="number">13</div><div class="id">Al</div><div class="name">Алюминий</div><div class="mass">26.092</div></a></td><td class="chem-element p_block"><a href="pages/si.html" target="_blank"><div class="number">14</div><div class="id">Si</div><div class="name">Кремний</div><div class="mass">28.086</div></a></td><td class="chem-element p_block"><a href="pages/p.html" target="_blank"><div class="number">15</div><div class="id">P</div><div class="name">Фосфор</div><div class="mass">30.974</div></a></td><td class="chem-element p_block"><a href="pages/s.html" target="_blank"><div class="number">16</div><div class="id">S</div><div class="name">Сера</div><div class="mass">32.064</div></a></td><td class="chem-element p_block"><a href="pages/cl.html" target="_blank"><div class="number">17</div><div class="id">Cl</div><div class="name">Хлор</div><div class="mass">35.453</div></a></td><td class="chem-element p_block"><a href="pages/ar.html" target="_blank"><div class="number">18</div><div class="id">Ar</div><div class="name">Аргон</div><div class="mass">39.948</div></a></td></tr><tr><th class="ptableperiodlabel">4</th><td class="chem-element s_block"><a href="pages/k.html" target="_blank"><div class="number">19</div><div class="id">K</div><div class="name">Калий</div><div class="mass">39.102</div></td></a><td class="chem-element s_block"><a href="pages/ca.html" target="_blank"><div class="number">20</div><div class="id">Ca</div><div class="name">Кальций</div><div class="mass">40.08</div></a></td><td class="chem-element d_block"><a href="pages/sc.html" target="_blank"><div class="number">21</div><div class="id">Sc</div><div class="name">Скандий</div><div class="mass">44.956</div></a></td><td class="chem-element d_block"><a href="pages/ti.html" target="_blank"><div class="number">22</div><div class="id">Ti</div><div class="name">Титан</div><div class="mass">47.956</div></a></td><td class="chem-element d_block"><a href="pages/v.html" target="_blank"><div class="number">23</div><div class="id">V</div><div class="name">Ванадий</div><div class="mass">50.941</div></a></td><td class="chem-element d_block"><a href="pages/cr.html" target="_blank"><div class="number">24</div><div class="id">Cr</div><div class="name">Хром</div><div class="mass">51.996</div></a></td><td class="chem-element d_block"><a href="pages/mn.html" target="_blank"><div class="number">25</div><div class="id">Mn</div><div class="name">Марганец</div><div class="mass">54.938</div></a></td><td class="chem-element d_block"><a href="pages/fe.html" target="_blank"><div class="number">26</div><div class="id">Fe</div><div class="name">Железо</div><div class="mass">55.849</div></a></td><td class="chem-element d_block"><a href="pages/co.html" target="_blank"><div class="number">27</div><div class="id">Co</div><div class="name">Кобальт</div><div class="mass">58.933</div></a></td><td class="chem-element d_block"><a href="pages/ni.html" target="_blank"><div class="number">28</div><div class="id">Ni</div><div class="name">Никель</div><div class="mass">58.7</div></a></td><td class="chem-element d_block"><a href="pages/cu.html" target="_blank"><div class="number">29</div><div class="id">Cu</div><div class="name">Медь</div><div class="mass">63.546</div></a></td><td class="chem-element d_block"><a href="pages/zn.html" target="_blank"><div class="number">30</div><div class="id">Zn</div><div class="name">Цинк</div><div class="mass">65.37</div></a></td><td class="chem-element p_block"><a href="pages/ga.html" target="_blank"><div class="number">31</div><div class="id">Ga</div><div class="name">Галлий</div><div class="mass">69.72</div></a></td><td class="chem-element p_block"><a href="pages/ge.html" target="_blank"><div class="number">32</div><div class="id">Ge</div><div class="name">Германий</div><div class="mass">72.59</div></a></td><td class="chem-element p_block"><a href="pages/as.html" target="_blank"><div class="number">33</div><div class="id">As</div><div class="name">Мышьяк</div><div class="mass">74.922</div></a></td><td class="chem-element p_block"><a href="pages/se.html" target="_blank"><div class="number">34</div><div class="id">Se</div><div class="name">Селен</div><div class="mass">78.96</div></a></td><td class="chem-element p_block"><a href="pages/br.html" target="_blank"><div class="number">35</div><div class="id">Br</div><div class="name">Бром</div><div class="mass">79.904</div></a></td><td class="chem-element p_block"><a href="pages/kr.html" target="_blank"><div class="number">36</div><div class="id">Kr</div><div class="name">Криптон</div><div class="mass">83.8</div></a></td></tr><tr><th class="ptableperiodlabel">5</th><td class="chem-element s_block"><div class="number">37</div><a href="pages/rb.html" target="_blank"><div class="id">Rb</div><div class="name">Рубидий</div><div class="mass">85.468</div></a></td><td class="chem-element s_block"><a href="pages/sr.html" target="_blank"><div class="number">38</div><div class="id">Sr</div><div class="name">Стронций</div><div class="mass">87.62</div></a></td><td class="chem-element d_block"><a href="pages/y.html" target="_blank"><div class="number">39</div><div class="id">Y</div><div class="name">Иттрий</div><div class="mass">88.906</div></a></td><td class="chem-element d_block"><a href="pages/zr.html" target="_blank"><div class="number">40</div><div class="id">Zr</div><div class="name">Цирконий</div><div class="mass">91.22</div></a></td><td class="chem-element d_block"><a href="pages/nb.html" target="_blank"><div class="number">41</div><div class="id">Nb</div><div class="name">Ниобий</div><div class="mass">92.906</div></a></td><td class="chem-element d_block"><a href="pages/mo.html" target="_blank"><div class="number">42</div><div class="id">Mo</div><div class="name">Молибден</div><div class="mass">95.94</div></a></td><td class="chem-element d_block"><a href="pages/tc.html" target="_blank"><div class="number">43</div><div class="id">Tc</div><div class="name">Технеций</div><div class="mass">99</div></a></td><td class="chem-element d_block"><a href="pages/ru.html" target="_blank"><div class="number">44</div><div class="id">Ru</div><div class="name">Рутений</div><div class="mass">101.07</div></a></td><td class="chem-element d_block"><a href="pages/rh.html" target="_blank"><div class="number">45</div><div class="id">Rh</div><div class="name">Родий</div><div class="mass">102.906</div></a></td><td class="chem-element d_block"><a href="pages/pd.html" target="_blank"><div class="number">46</div><div class="id">Pd</div><div class="name">Палладий</div><div class="mass">106.4</div></a></td><td class="chem-element d_block"><a href="pages/ag.html" target="_blank"><div class="number">47</div><div class="id">Ag</div><div class="name">Серебро</div><div class="mass">107.868</div></a></td><td class="chem-element d_block"><a href="pages/cd.html" target="_blank"><div class="number">48</div><div class="id">Cd</div><div class="name">Кадмий</div><div class="mass">112.41</div></a></td><td class="chem-element p_block"><a href="pages/in.html" target="_blank"><div class="number">49</div><div class="id">In</div><div class="name">Индий</div><div class="mass">114.82</div></a></td><td class="chem-element p_block"><a href="pages/sn.html" target="_blank"><div class="number">50</div><div class="id">Sn</div><div class="name">Олово</div><div class="mass">118.69</div></a></td><td class="chem-element p_block"><a href="pages/sb.html" target="_blank"><div class="number">51</div><div class="id">Sb</div><div class="name">Сурьма</div><div class="mass">121.75</div></a></td><td class="chem-element p_block"><a href="pages/te.html" target="_blank"><div class="number">52</div><div class="id">Te</div><div class="name">Теллур</div><div class="mass">127.6</div></a></td><td class="chem-element p_block"><a href="pages/i.html" target="_blank"><div class="number">53</div><div class="id">I</div><div class="name">Йод</div><div class="mass">126.905</div></a></td><td class="chem-element p_block"><a href="pages/xe.html" target="_blank"><div class="number">54</div><div class="id">Xe</div><div class="name">Ксенон</div><div class="mass">131.3</div></a></td></tr><tr><th class="ptableperiodlabel">6</th><td class="chem-element s_block"><a href="pages/cs.html" target="_blank"><div class="number">55</div><div class="id">Cs</div><div class="name">Цезий</div><div class="mass">132.905</div></a></td><td class="chem-element s_block"><a href="pages/ba.html" target="_blank"><div class="number">56</div><div class="id">Ba</div><div class="name">Барий</div><div class="mass">137.34</div></a></td><td></td><td class="chem-element d_block"><a href="pages/hf.html" target="_blank"><div class="number">72</div><div class="id">Hf</div><div class="name">Гафний</div><div class="mass">178.49</div></a></td><td class="chem-element d_block"><a href="pages/ta.html" target="_blank"><div class="number">73</div><div class="id">Ta</div><div class="name">Тантал</div><div class="mass">180.948</div></a></td><td class="chem-element d_block"><a href="pages/w.html" target="_blank"><div class="number">74</div><div class="id">W</div><div class="name">Вольфрам</div><div class="mass">183.85</div></a></td><td class="chem-element d_block"><a href="pages/re.html" target="_blank"><div class="number">75</div><div class="id">Re</div><div class="name">Рений</div><div class="mass">186.207</div></a></td><td class="chem-element d_block"><a href="pages/os.html" target="_blank"><div class="number">76</div><div class="id">Os</div><div class="name">Осмий</div><div class="mass">190.2</div></a></td><td class="chem-element d_block"><a href="pages/ir.html" target="_blank"><div class="number">77</div><div class="id">Ir</div><div class="name">Иридий</div><div class="mass">192.22</div></a></td><td class="chem-element d_block"><a href="pages/pt.html" target="_blank"><div class="number">78</div><div class="id">Pt</div><div class="name">Платина</div><div class="mass">195.09</div></a></td><td class="chem-element d_block"><a href="pages/au.html" target="_blank"><div class="number">79</div><div class="id">Au</div><div class="name">Золото</div><div class="mass">196.967</div></a></td><td class="chem-element d_block"><a href="pages/hg.html" target="_blank"><div class="number">80</div><div class="id">Hg</div><div class="name">Ртуть</div><div class="mass">200.59</div></a></td><td class="chem-element p_block"><a href="pages/tl.html" target="_blank"><div class="number">81</div><div class="id">Tl</div><div class="name">Таллий</div><div class="mass">204.37</div></a></td><td class="chem-element p_block"><a href="pages/pb.html" target="_blank"><div class="number">82</div><div class="id">Pb</div><div class="name">Свинец</div><div class="mass">207.19</div></a></td><td class="chem-element p_block"><a href="pages/bi.html" target="_blank"><div class="number">83</div><div class="id">Bi</div><div class="name">Висмут</div><div class="mass">208.98</div></a></td><td class="chem-element p_block"><a href="pages/po.html" target="_blank"><div class="number">84</div><div class="id">Po</div><div class="name">Полоний</div><div class="mass">210</div></a></td><td class="chem-element p_block"><a href="pages/at.html" target="_blank"><div class="number">85</div><div class="id">At</div><div class="name">Астат</div><div class="mass">210</div></a></td><td class="chem-element p_block"><a href="pages/rn.html" target="_blank"><div class="number">86</div><div class="id">Rn</div><div class="name">Радон</div><div class="mass">222</div></td></a></tr><tr><th class="ptableperiodlabel">7</th><td class="chem-element s_block"><a href="pages/fr.html" target="_blank"><div class="number">87</div><div class="id">Fr</div><div class="name">Франций</div><div class="mass">223</div></a></td><td class="chem-element s_block"><a href="pages/ra.html" target="_blank"><div class="number">88</div><div class="id">Ra</div><div class="name">Радий</div><div class="mass">226</div></a></td><td></td><td class="chem-element d_block"><a href="pages/rf.html" target="_blank"><div class="number">104</div><div class="id">Rf</div><div class="name">Резерфордий</div><div class="mass">261</div></a></td><td class="chem-element d_block"><a href="pages/db.html" target="_blank"><div class="number">105</div><div class="id">Db</div><div class="name">Дубний</div><div class="mass">262</div></a></td><td class="chem-element d_block"><a href="pages/sg.html" target="_blank"><div class="number">106</div><div class="id">Sg</div><div class="name">Сиборгий</div><div class="mass">271</div></a></td><td class="chem-element d_block"><a href="pages/bh.html" target="_blank"><div class="number">107</div><div class="id">Bh</div><div class="name">Борий</div><div class="mass">267</div></a></td><td class="chem-element d_block"><a href="pages/hs.html" target="_blank"><div class="number">108</div><div class="id">Hs</div><div class="name">Хассий</div><div class="mass">269</div></a></td><td class="chem-element d_block"><a href="pages/mt.html" target="_blank"><div class="number">109</div><div class="id">Mt</div><div class="name">Мейтнерий</div><div class="mass">276</div></a></td><td class="chem-element d_block"><a href="pages/ds.html" target="_blank"><div class="number">110</div><div class="id">Ds</div><div class="name">Дармштадтий</div><div class="mass">281</div></a></td><td class="chem-element d_block"><a href="pages/rg.html" target="_blank"><div class="number">111</div><div class="id">Rg</div><div class="name">Рентгений</div><div class="mass">280</div></a></td><td class="chem-element d_block"><a href="pages/cn.html" target="_blank"><div class="number">112</div><div class="id">Cn</div><div class="name">Коперниций</div><div class="mass">285</div></a></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+		  </body>
+</html>
