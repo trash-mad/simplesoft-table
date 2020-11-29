@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<title>Таблица Изотопов</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<style>
+.wideBox {
+  position: fixed;
+  width: 90%;
+  z-index: 50;
+  text-align: left;
+  margin-bottom: 50px;
+  padding: 5px;
+}
+#chartContainer{
+    position: fixed;
+	z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 300px; 
+	width: 100%;
+}
+</style>
+<script type="text/javascript">
+function ss(number){
+switch (number) {
+  case 1:
+    return "\u2081";
+    break
+  case 2:
+    return "\u2082";
+    break
+  case 3:
+    return "\u2083";
+    break
+  case 4:
+    return "\u2084";
+    break
+  case 5:
+    return "\u2085";
+    break
+  case 6:
+    return "\u2086";
+    break
+  case 7:
+    return "\u2087";
+    break
+  case 8:
+    return "\u2088";
+    break
+  case 9:
+    return "\u2089";
+    break
+  case 10:
+    return "\u2081\u2080"
+    break
+  case 0:
+    return "\u2080"
+    break
+
+}
+
+}
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "center",
+			horizontalAlign: "left",
+			fontSize: 20,
+			fontFamily: "Helvetica"        
+		},
+		theme: "theme2",
+		data: [
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {q}%",
+			startAngle:-20,      
+			showInLegend: true,
+			toolTipContent:"{legendText} {q}%",
+			dataPoints: [
+				{  q: 100, y: 100, legendText:ss(7)+ss(5)+"As", label: ss(7)+ss(5)+"As" },
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="dia.js"></script> 
+</head>
+<body>
+<div class="wideBox">
+    <sup style="display: inline-block;" >33</sup><p style="display: inline-block;" >As</p>&nbsp;<h3 style="display: inline-block;" >Изотопы мышьяка</h3>
+  </div>
+<div id="chartContainer" style=""></div>
+</body>
+
+
+</html>
