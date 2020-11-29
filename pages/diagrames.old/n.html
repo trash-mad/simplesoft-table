@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<title>Таблица Изотопов</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<style>
+.wideBox {
+  position: fixed;
+  width: 90%;
+  z-index: 50;
+  text-align: left;
+  margin-bottom: 50px;
+  padding: 5px;
+}
+#chartContainer{
+    position: fixed;
+	z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 300px; 
+	width: 100%;
+}
+</style>
+<script type="text/javascript">
+function ss(number){
+switch (number) {
+  case 1:
+    return "\u00B9";
+    break
+  case 2:
+    return "\u00B2";
+    break
+  case 3:
+    return "\u00B3";
+    break
+  case 4:
+    return "\u2074";
+    break
+  case 5:
+    return "\u2075";
+    break
+  case 6:
+    return "\u2076";
+    break
+  case 7:
+    return "\u2077";
+    break
+  case 8:
+    return "\u2078";
+    break
+  case 9:
+    return "\u2079";
+    break
+  case 10:
+    return "\u00B9\u2070"
+    break
+
+}
+
+}
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "center",
+			horizontalAlign: "left",
+			fontSize: 20,
+			fontFamily: "Helvetica"        
+		},
+		theme: "theme2",
+		data: [
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {q}%",
+			startAngle:-20,      
+			showInLegend: true,
+			toolTipContent:"{legendText} {q}%",
+			dataPoints: [
+				{  q: 99.636, y: 97, legendText:ss(1)+ss(4)+"N", label: ss(1)+ss(4)+"N" },
+				{  q: 0.364, y: 3, legendText:ss(1)+ss(5)+"N", label: ss(1)+ss(5)+"N" },
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="dia.js"></script> 
+</head>
+<body>
+<div class="wideBox">
+    <h1>Изотопы азота</h1>
+  </div>
+<div id="chartContainer" style=""></div>
+</body>
+
+
+</html>
